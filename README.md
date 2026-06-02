@@ -3,6 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/baspa/laravel-s3-uploader.svg?style=flat-square)](https://packagist.org/packages/baspa/laravel-s3-uploader)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/baspa/laravel-s3-uploader/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/baspa/laravel-s3-uploader/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![PHPStan](https://img.shields.io/github/actions/workflow/status/baspa/laravel-s3-uploader/phpstan.yml?branch=main&label=phpstan&style=flat-square)](https://github.com/baspa/laravel-s3-uploader/actions?query=workflow%3APHPStan+branch%3Amain)
+[![Coverage](https://img.shields.io/codecov/c/github/baspa/laravel-s3-uploader?style=flat-square)](https://codecov.io/gh/baspa/laravel-s3-uploader)
 [![Total Downloads](https://img.shields.io/packagist/dt/baspa/laravel-s3-uploader.svg?style=flat-square)](https://packagist.org/packages/baspa/laravel-s3-uploader)
 
 Upload a local folder to S3 (or any S3-compatible storage) with a single Artisan command. It reads your existing S3 credentials straight from your application's filesystem configuration, walks a directory recursively, and streams every file to a destination prefix on the bucket.
