@@ -1,9 +1,10 @@
-# Laravel S3 Client
+# Laravel S3 Uploader
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/baspa/laravel-s3-client.svg?style=flat-square)](https://packagist.org/packages/baspa/laravel-s3-client)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/baspa/laravel-s3-client/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/baspa/laravel-s3-client/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![PHPStan](https://img.shields.io/github/actions/workflow/status/baspa/laravel-s3-client/phpstan.yml?branch=main&label=phpstan&style=flat-square)](https://github.com/baspa/laravel-s3-client/actions?query=workflow%3APHPStan+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/baspa/laravel-s3-client.svg?style=flat-square)](https://packagist.org/packages/baspa/laravel-s3-client)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/baspa/laravel-s3-uploader.svg?style=flat-square)](https://packagist.org/packages/baspa/laravel-s3-uploader)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/baspa/laravel-s3-uploader/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/baspa/laravel-s3-uploader/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![PHPStan](https://img.shields.io/github/actions/workflow/status/baspa/laravel-s3-uploader/phpstan.yml?branch=main&label=phpstan&style=flat-square)](https://github.com/baspa/laravel-s3-uploader/actions?query=workflow%3APHPStan+branch%3Amain)
+[![Coverage](https://img.shields.io/codecov/c/github/baspa/laravel-s3-uploader?style=flat-square)](https://codecov.io/gh/baspa/laravel-s3-uploader)
+[![Total Downloads](https://img.shields.io/packagist/dt/baspa/laravel-s3-uploader.svg?style=flat-square)](https://packagist.org/packages/baspa/laravel-s3-uploader)
 
 Upload a local folder to S3 (or any S3-compatible storage) with a single Artisan command. It reads your existing S3 credentials straight from your application's filesystem configuration, walks a directory recursively, and streams every file to a destination prefix on the bucket.
 
@@ -16,7 +17,7 @@ php artisan s3:upload storage/app/exports backups/2026
 Install the package via composer:
 
 ```bash
-composer require baspa/laravel-s3-client
+composer require baspa/laravel-s3-uploader
 ```
 
 This package uploads through a standard Laravel filesystem disk, so you also need the S3 driver in your application (most Laravel apps already have it):
@@ -28,7 +29,7 @@ composer require league/flysystem-aws-s3-v3 "^3.0"
 Optionally publish the config file:
 
 ```bash
-php artisan vendor:publish --tag="laravel-s3-client-config"
+php artisan vendor:publish --tag="laravel-s3-uploader-config"
 ```
 
 ## Configuration
@@ -47,14 +48,14 @@ S3-compatible providers (MinIO, DigitalOcean Spaces, Cloudflare R2, …) work to
 Want to point the package at a different disk? Publish the config and change the disk name, or set it in your `.env`:
 
 ```dotenv
-S3_CLIENT_DISK=backups
+S3_UPLOADER_DISK=backups
 ```
 
-The published `config/s3-client.php`:
+The published `config/s3-uploader.php`:
 
 ```php
 return [
-    'disk' => env('S3_CLIENT_DISK', 's3'),
+    'disk' => env('S3_UPLOADER_DISK', 's3'),
 ];
 ```
 

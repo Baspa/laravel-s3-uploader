@@ -1,3 +1,3 @@
 # Changelog
 
-All notable changes to `Laravel S3 Client` will be documented in this file.
+All notable changes to `Laravel S3 Uploader` will be documented in this file.

@@ -1,12 +1,12 @@
 <?php
 
-namespace Baspa\LaravelS3Client;
+namespace Baspa\LaravelS3Uploader;
 
-use Baspa\LaravelS3Client\Commands\UploadCommand;
+use Baspa\LaravelS3Uploader\Commands\UploadCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelS3ClientServiceProvider extends PackageServiceProvider
+class LaravelS3UploaderServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,8 +16,8 @@ class LaravelS3ClientServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-s3-client')
-            ->hasConfigFile('s3-client')
+            ->name('laravel-s3-uploader')
+            ->hasConfigFile('s3-uploader')
             ->hasCommand(UploadCommand::class);
     }
 }

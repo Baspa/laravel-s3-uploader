@@ -1,6 +1,6 @@
 <?php
 
-namespace Baspa\LaravelS3Client;
+namespace Baspa\LaravelS3Uploader;
 
 class UploadResult
 {

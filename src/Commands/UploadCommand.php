@@ -1,9 +1,9 @@
 <?php
 
-namespace Baspa\LaravelS3Client\Commands;
+namespace Baspa\LaravelS3Uploader\Commands;
 
-use Baspa\LaravelS3Client\DirectoryUploader;
-use Baspa\LaravelS3Client\UploadResult;
+use Baspa\LaravelS3Uploader\DirectoryUploader;
+use Baspa\LaravelS3Uploader\UploadResult;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 use InvalidArgumentException;
@@ -14,7 +14,7 @@ class UploadCommand extends Command
     public $signature = 's3:upload
         {source : The local directory to upload}
         {destination : The destination folder (prefix) on the disk}
-        {--disk= : The disk to upload to (defaults to the s3-client.disk config value)}
+        {--disk= : The disk to upload to (defaults to the s3-uploader.disk config value)}
         {--force : Overwrite files that already exist on the disk}
         {--dry-run : Show what would be uploaded without writing anything}';
 
@@ -94,7 +94,7 @@ class UploadCommand extends Command
             return $disk;
         }
 
-        $configured = config('s3-client.disk');
+        $configured = config('s3-uploader.disk');
 
         return is_string($configured) ? $configured : 's3';
     }

@@ -1,5 +1,5 @@
 {
-    "name": "baspa/laravel-s3-client",
+    "name": "baspa/laravel-s3-uploader",
     "description": "Upload local files and folders to S3 from an Artisan command",
     "keywords": [
         "baspa",
@@ -9,7 +9,7 @@
         "upload",
         "filesystem"
     ],
-    "homepage": "https://github.com/baspa/laravel-s3-client",
+    "homepage": "https://github.com/baspa/laravel-s3-uploader",
     "license": "MIT",
     "authors": [
         {
@@ -44,12 +44,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Baspa\\LaravelS3Client\\": "src/"
+            "Baspa\\LaravelS3Uploader\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Baspa\\LaravelS3Client\\Tests\\": "tests/"
+            "Baspa\\LaravelS3Uploader\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -70,7 +70,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Baspa\\LaravelS3Client\\LaravelS3ClientServiceProvider"
+                "Baspa\\LaravelS3Uploader\\LaravelS3UploaderServiceProvider"
             ]
         }
     },

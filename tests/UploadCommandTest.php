@@ -90,6 +90,10 @@ it('uploads to the disk given by --disk', function () {
 });
 
 it('reports failures and exits non-zero when a file cannot be read', function () {
+    if (PHP_OS_FAMILY === 'Windows') {
+        $this->markTestSkipped('chmod-based permissions are not reliable on Windows.');
+    }
+
     makeFile($this->source, 'ok.txt', 'A');
     makeFile($this->source, 'bad.txt', 'B');
     chmod($this->source.'/bad.txt', 0000);

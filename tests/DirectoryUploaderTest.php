@@ -1,7 +1,7 @@
 <?php
 
-use Baspa\LaravelS3Client\DirectoryUploader;
-use Baspa\LaravelS3Client\UploadStatus;
+use Baspa\LaravelS3Uploader\DirectoryUploader;
+use Baspa\LaravelS3Uploader\UploadStatus;
 use Illuminate\Support\Facades\Storage;
 
 beforeEach(function () {
