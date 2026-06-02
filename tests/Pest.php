@@ -1,6 +1,6 @@
 <?php
 
-use Baspa\LaravelS3Client\Tests\TestCase;
+use Baspa\LaravelS3Uploader\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 

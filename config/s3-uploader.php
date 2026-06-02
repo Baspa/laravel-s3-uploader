@@ -1,6 +1,6 @@
 <?php
 
-// config for Baspa/LaravelS3Client
+// config for Baspa/LaravelS3Uploader
 return [
 
     /*
@@ -16,6 +16,6 @@ return [
     |
     */
 
-    'disk' => env('S3_CLIENT_DISK', 's3'),
+    'disk' => env('S3_UPLOADER_DISK', 's3'),
 
 ];

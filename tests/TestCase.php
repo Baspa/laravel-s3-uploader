@@ -1,8 +1,8 @@
 <?php
 
-namespace Baspa\LaravelS3Client\Tests;
+namespace Baspa\LaravelS3Uploader\Tests;
 
-use Baspa\LaravelS3Client\LaravelS3ClientServiceProvider;
+use Baspa\LaravelS3Uploader\LaravelS3UploaderServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -10,7 +10,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            LaravelS3ClientServiceProvider::class,
+            LaravelS3UploaderServiceProvider::class,
         ];
     }
 }
