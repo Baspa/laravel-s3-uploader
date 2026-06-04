@@ -82,7 +82,11 @@ class DirectoryUploader
             try {
                 $this->disk->writeStream($target, $stream);
             } finally {
-                fclose($stream);
+                // Some adapters (e.g. league/flysystem-aws-s3-v3) consume and
+                // close the stream themselves; only close it if still open.
+                if (is_resource($stream)) {
+                    fclose($stream);
+                }
             }
         }
 

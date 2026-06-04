@@ -1,6 +1,7 @@
 <?php
 
 use Baspa\LaravelS3Uploader\DirectoryUploader;
+use Baspa\LaravelS3Uploader\Tests\Doubles\StreamClosingDisk;
 use Baspa\LaravelS3Uploader\UploadStatus;
 use Illuminate\Support\Facades\Storage;
 
@@ -99,4 +100,16 @@ it('reports a dry-run skip for an existing file', function () {
     $status = $uploader->store($this->source, 'a.txt', 'dest', dryRun: true);
 
     expect($status)->toBe(UploadStatus::Skipped);
+});
+
+it('uploads through adapters that close the stream themselves', function () {
+    makeFile($this->source, 'a.txt', 'hi');
+    $disk = Storage::fake('s3');
+    $uploader = new DirectoryUploader(new StreamClosingDisk($disk));
+
+    $status = $uploader->store($this->source, 'a.txt', 'dest');
+
+    expect($status)->toBe(UploadStatus::Uploaded);
+    $disk->assertExists('dest/a.txt');
+    expect($disk->get('dest/a.txt'))->toBe('hi');
 });
